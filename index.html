@@ -69,7 +69,7 @@
       </nav>
     </header>
 
-    <!-- Home Section -->
+    
     <main>
       <section class="home" id="home">
         <div class="home-content">
@@ -137,7 +137,7 @@
         >Here is some scrolling text... left to right!</marquee
       >
 
-      <!-- About Section -->
+   
       <section class="section about" id="about">
         <div class="about-content container">
           <div class="about-imageContent">
@@ -183,7 +183,7 @@
         </div>
       </section>
 
-      <!-- resource section -->
+     
       <div class="card-list">
         <a href="#" class="card-item">
           <img src="images/aboutImg.jpg" alt="Card Image" />
@@ -211,7 +211,7 @@
         </a>
       </div>
 
-      <!-- Menu Section -->
+   
       <section class="section menu" id="menu">
         <div class="menu-container container">
           <div class="meu-text">
@@ -330,7 +330,7 @@
         </div>
       </section>
 
-      <!-- Brand Section -->
+ 
       <section class="section brand">
         <div class="brand-container container">
           <h4 class="section-subtitle"><i>Our Trusted Brand</i></h4>
@@ -355,8 +355,24 @@
         </div>
       </section>
 
-      <!-- Reviews Section -->
-      <section class="section " id="review" style="margin: 0; padding: 0; background-image: url('/images/aboutImg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: auto; display: flex; align-items: center; justify-content: center; color: white;">
+   
+      <section
+        class="section"
+        id="review"
+        style="
+          margin: 0;
+          padding: 0;
+          background-image: url('/images/aboutImg.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+        "
+      >
         <div class="review-container container">
           <div class="review-text">
             <h4 class="section-subtitle"><i>Reviews</i></h4>
@@ -420,7 +436,7 @@
         </div>
       </section>
 
-      <!-- Newsletter Section -->
+    
       <section class="section newsletter">
         <div class="newletter-container container">
           <a href="#" class="logo-content flex">
@@ -459,7 +475,154 @@
             ></a>
           </div>
         </div>
-      </section>
+      </section> 
+
+       count donw
+      <style>
+        .countdown {
+          display: flex;
+        }
+
+        .counter {
+          text-align: center;
+          margin: 0 20px;
+        }
+
+        .number {
+          font-size: 2em;
+          font-weight: bold;
+          color: #333;
+        }
+
+        .label {
+          display: block;
+          color: #777;
+        }
+      </style>
+
+      <!-- <div class="countdown">
+        <div class="counter" id="students">
+            <span class="number">0</span>
+            <span class="label">Students</span>
+        </div>
+        <div class="counter" id="courses">
+            <span class="number">0</span>
+            <span class="label">Courses</span>
+        </div>
+        <div class="counter" id="events">
+            <span class="number">0</span>
+            <span class="label">Events</span>
+        </div>
+        <div class="counter" id="trainers">
+            <span class="number">0</span>
+            <span class="label">Trainers</span>
+        </div>
+    </div> -->
+
+    <div class="countdown">
+        <div class="counter" id="students">
+            <span class="number">0</span>
+            <span class="label">Students</span>
+        </div>
+        <div class="counter" id="courses">
+            <span class="number">0</span>
+            <span class="label">Courses</span>
+        </div>
+        <div class="counter" id="events">
+            <span class="number">0</span>
+            <span class="label">Events</span>
+        </div>
+        <div class="counter" id="trainers">
+            <span class="number">0</span>
+            <span class="label">Trainers</span>
+        </div>
+    </div>
+
+
+   <script>
+    // Target values
+const targetValues = {
+    students: 100,
+    courses: 64,
+    events: 42,
+    trainers: 15
+};
+
+// Flag to track whether counting has started
+let countingStarted = false;
+
+// Function to update the HTML with the countdown values
+function updateCountdown() {
+    if (countingStarted) {
+        Object.keys(targetValues).forEach(key => {
+            const element = document.getElementById(key);
+            if (element) {
+                const currentCount = parseInt(element.querySelector('.number').textContent);
+                if (currentCount < targetValues[key]) {
+                    const updatedCount = currentCount + 1;
+                    element.querySelector('.number').textContent = updatedCount;
+                }
+            }
+        });
+    }
+}
+
+// Update counts every second (adjust as needed)
+const intervalId = setInterval(updateCountdown, 100);
+
+// Stop counting when the target values are reached
+function stopCounting() {
+    clearInterval(intervalId);
+}
+
+// Call stopCounting after reaching the target values
+setTimeout(stopCounting, 1000 * (Math.max(...Object.values(targetValues)) + 1));
+
+// Add event listener to start counting on hover
+const coursesSection = document.getElementById('courses');
+if (coursesSection) {
+    coursesSection.addEventListener('mouseenter', () => {
+        countingStarted = true;
+    });
+}
+
+   </script>
+
+    <!-- <script>
+      // Target values
+const targetValues = {
+    students: 100,
+    courses: 64,
+    events: 42,
+    trainers: 15
+};
+
+// Update the HTML with the countdown values
+function updateCountdown() {
+    Object.keys(targetValues).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+            const currentCount = parseInt(element.querySelector('.number').textContent);
+            if (currentCount < targetValues[key]) {
+                const updatedCount = currentCount + 1;
+                element.querySelector('.number').textContent = updatedCount;
+            }
+        }
+    });
+}
+
+// Update counts every second (adjust as needed)
+const intervalId = setInterval(updateCountdown, 100);
+
+// Stop counting when the target values are reached
+function stopCounting() {
+    clearInterval(intervalId);
+}
+
+// Call stopCounting after reaching the target values
+setTimeout(stopCounting, 1000 * (Math.max(...Object.values(targetValues)) + 1));
+
+    </script> -->
 
       <!-- Footer Section -->
       <footer class="section footer">
