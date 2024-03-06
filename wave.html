@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .body-counter {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Solid color overlay */
-    .overlay-solid {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(18, 29, 177, 0.5);
-      /* Adjust the color and opacity as needed */
-    }
+        .container-counter {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
 
-    /* Your content styles */
-    .content-resarch {
-      z-index: 1;
-      text-align: center;
-      color: white;
-      padding: 20px;
-    }
-  </style>
+        .box-counter {
+            flex: 0 1 calc(25% - 20px);
+            box-sizing: border-box;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .box-counter img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Responsive Flexbox</title>
 </head>
-
 <body>
-
-  <section style="margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('/images/brandImg1.png') center/cover no-repeat;">
-    <!-- Solid color overlay -->
-    <div class="overlay-solid"></div>
-
-    <!-- Content -->
-    <div class="content-resarch">
-      <h1>Your Title</h1>
-      <p>Your text content here.</p>
+    <div class="container">
+        <div class="box">
+            <img src="your_image_url_1" alt="Image 1">
+            <h2>Title 1</h2>
+            <p>Count 1</p>
+        </div>
+        <div class="box">
+            <img src="your_image_url_2" alt="Image 2">
+            <h2>Title 2</h2>
+            <p>Count 2</p>
+        </div>
+        <div class="box">
+            <img src="your_image_url_3" alt="Image 3">
+            <h2>Title 3</h2>
+            <p>Count 3</p>
+        </div>
+        <div class="box">
+            <img src="your_image_url_4" alt="Image 4">
+            <h2>Title 4</h2>
+            <p>Count 4</p>
+        </div>
     </div>
-  </section>
-
 </body>
-
 </html>
