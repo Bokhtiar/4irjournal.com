@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .body-counter {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        section {
+            position: relative;
+            background-color: #3498db;
+            /* Set your background color */
+            height: 100vh;
         }
 
-        .container-counter {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('/images/.jpg');
+            /* Set your background image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            /* Adjust the opacity as needed */
+            z-index: -1;
+            /* Place it behind the content */
         }
 
-        .box-counter {
-            flex: 0 1 calc(25% - 20px);
-            box-sizing: border-box;
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ddd;
+        /* Additional styling for content (optional) */
+        .content {
+            position: relative;
+            z-index: 1;
+            /* Ensure content is on top of the pseudo-element */
+            color: white;
             text-align: center;
-        }
-
-        .box-counter img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
+            padding: 20px;
         }
     </style>
-    <title>Responsive Flexbox</title>
 </head>
+
 <body>
-    <div class="container">
-        <div class="box">
-            <img src="your_image_url_1" alt="Image 1">
-            <h2>Title 1</h2>
-            <p>Count 1</p>
+
+    <section>
+        <div class="content">
+            <h1>Your Content Goes Here</h1>
+            <p>This is a sample text within the content.</p>
         </div>
-        <div class="box">
-            <img src="your_image_url_2" alt="Image 2">
-            <h2>Title 2</h2>
-            <p>Count 2</p>
-        </div>
-        <div class="box">
-            <img src="your_image_url_3" alt="Image 3">
-            <h2>Title 3</h2>
-            <p>Count 3</p>
-        </div>
-        <div class="box">
-            <img src="your_image_url_4" alt="Image 4">
-            <h2>Title 4</h2>
-            <p>Count 4</p>
-        </div>
-    </div>
+    </section>
+
 </body>
+
 </html>
