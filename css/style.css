@@ -1379,16 +1379,35 @@ img {
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS291ua1lZ2ZPMg0VctbcWlKi6NE8B555V910DJw-RJVA&s') center/cover no-repeat;
     
 }
+.count-time{
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    border-radius: 10px;
+    position: relative;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS291ua1lZ2ZPMg0VctbcWlKi6NE8B555V910DJw-RJVA&s') center/cover no-repeat;
+}
  .overly {
    background-size: cover;
    position: absolute;
    left: 0;
+
    top: 0;
    height: 400px;
    width: 100%;
    background-color: rgba(0, 0, 255, 0.4);
  }
-
+.overly-time{
+  background-size: cover;
+    position: absolute;
+    left: 0;
+    border-radius: 10px;
+    top: 0;
+    height: 350px;
+    width: 100%;
+    background-color: rgba(0, 0, 255, 0.4);
+}
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .overly {
