@@ -49,8 +49,8 @@ html {
   --font-semi-bold: 600;
 
   /* Color Variables */
-  --primary-color: #FF5733;
-  --primary-color-hover: #C2703D;
+  --primary-color: #4faed9;
+  --primary-color-hover: #4faed9;
   --text-color: #333;
   --text-color-light: #888682;
   --border-color: #484848;
@@ -1376,7 +1376,7 @@ img {
     background-repeat: no-repeat;
     height: 400px;
     position: relative;
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS291ua1lZ2ZPMg0VctbcWlKi6NE8B555V910DJw-RJVA&s') center/cover no-repeat;
+    background: url('../images/co.jpg') center/cover no-repeat;
     
 }
 .count-time{
@@ -1386,7 +1386,7 @@ img {
     height: 350px;
     border-radius: 10px;
     position: relative;
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS291ua1lZ2ZPMg0VctbcWlKi6NE8B555V910DJw-RJVA&s') center/cover no-repeat;
+    background: url('../images/hall.jpg') center/cover no-repeat;
 }
  .overly {
    background-size: cover;
@@ -1396,7 +1396,7 @@ img {
    top: 0;
    height: 400px;
    width: 100%;
-   background-color: rgba(0, 0, 255, 0.4);
+   background-color: rgba(2, 2, 8, 0.4);
  }
 .overly-time{
   background-size: cover;
@@ -1406,7 +1406,7 @@ img {
     top: 0;
     height: 350px;
     width: 100%;
-    background-color: rgba(0, 0, 255, 0.4);
+    background-color: rgba(2, 2, 17, 0.4);
 }
 /* Media query for smaller screens */
 @media (max-width: 768px) {
@@ -1421,7 +1421,7 @@ img {
       background-repeat: no-repeat;
       height: 600px;
       position: relative;
-      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS291ua1lZ2ZPMg0VctbcWlKi6NE8B555V910DJw-RJVA&s') center/cover no-repeat;
+      background: url('../images/hall.jpg') center/cover no-repeat;
       
   }
 }
