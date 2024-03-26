@@ -1711,3 +1711,262 @@ nav ul li ul li {
 nav ul li:hover ul {
   display: block;
 }
+
+/* new swip slider */
+
+
+ /* Some Resets */
+ .slider-main {
+
+   display: grid;
+   place-items: center;
+ }
+
+ .slider-section {
+   margin-bottom: 15%;
+   padding: 5rem 0;
+   /* tablet sizing*/
+   width: 100%;
+
+   /* Added max-width */
+   height: min-content;
+   display: flex;
+   justify-content: center;
+   align-self: center;
+ }
+
+ .carousel__wrapper {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr max-content;
+   grid-template-areas:
+     "title nav"
+     "carousel carousel";
+   position: relative;
+   width: 100%;
+   height: max-content;
+   gap: 2rem 0;
+   align-items: center;
+ }
+
+ .carousel__header {
+   grid-area: title;
+   font-weight: 700;
+   font-size: 2rem;
+ }
+
+ .carousel {
+   grid-area: carousel;
+   position: relative;
+   overflow-x: clip;
+   width: 100%;
+   /* Added width */
+ }
+
+ .carousel__item {
+   position: absolute;
+   padding: 2rem;
+   border-radius: 12px;
+   background: #eee;
+   top: 0;
+   transition: all ease-in-out 800ms;
+   display: grid;
+   place-items: center;
+   width: 100%;
+   /* Added width */
+ }
+
+ .carousel__item--active {
+   top: -0.5rem;
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+ }
+
+ .carousel__item__name {
+   color: #fff;
+   text-align: center;
+ }
+
+ .carousel__item>div {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 0.5rem 0;
+ }
+
+ /* Caousel Nav */
+ .carousel__nav {
+   grid-area: nav;
+   justify-self: end;
+   display: flex;
+   justify-content: center;
+   gap: 0 1rem;
+ }
+
+ .carousel__nav__item {
+   padding: 0.375rem;
+   border: 1px solid #eee;
+   border-radius: 24px;
+   background-color: #e5e5e5;
+   cursor: pointer;
+   display: inline-block;
+   line-height: 0;
+ }
+
+ .carousel__nav__item:hover {
+   background-color: #cacacb;
+ }
+
+ @media screen and (max-width: 768px) {
+   .slider-section {
+     padding: 2rem 0;
+     /* Adjusted padding */
+     margin-bottom: 10%;
+   }
+ }
+
+    /* Add this CSS for responsiveness */
+    .carousel__item {
+      width: 100%;
+      /* Set item width to 100% */
+      left: 0;
+      /* Reset left position */
+    }
+  
+    @media screen and (min-width: 768px) {
+      .carousel__item {
+        width: calc(33.33% - 16px);
+        /* Calculate width for each item */
+        /* Adjust width and gap according to the number of items you want to show */
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         .slider-main {
+           display: grid;
+           place-items: center;
+         }
+    
+         .slider-section {
+           margin-bottom: 15%;
+           padding: 5rem 0;
+           /* tablet sizing*/
+           width: 100%;
+           /* Added max-width */
+           height: min-content;
+           display: flex;
+           justify-content: center;
+           align-self: center;
+         }
+    
+         .carousel__wrapper {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           grid-template-rows: 1fr max-content;
+           grid-template-areas: "title nav" "carousel carousel";
+           position: relative;
+           width: 100%;
+           height: max-content;
+           gap: 2rem 0;
+           align-items: center;
+         }
+    
+         .carousel__header {
+           grid-area: title;
+           font-weight: 700;
+           font-size: 2rem;
+         }
+    
+         .carousel {
+           grid-area: carousel;
+           position: relative;
+           overflow-x: clip;
+           width: 100%;
+           /* Added width */
+         }
+    
+         .carousel__item {
+           position: absolute;
+           padding: 2rem;
+           border-radius: 12px;
+           background: #eee;
+           top: 0;
+           transition: all ease-in-out 800ms;
+           display: grid;
+           place-items: center;
+           width: 100%;
+           /* Added width */
+         }
+    
+         .carousel__item--active {
+           top: -0.5rem;
+           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+         }
+    
+         .carousel__item__name {
+           color: #fff;
+           text-align: center;
+         }
+    
+         .carousel__item>div {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           gap: 0.5rem 0;
+         }
+    
+         /* Caousel Nav */
+         .carousel__nav {
+           grid-area: nav;
+           justify-self: end;
+           display: flex;
+           justify-content: center;
+           gap: 0 1rem;
+         }
+    
+         .carousel__nav__item {
+           padding: 0.375rem;
+           border: 1px solid #eee;
+           border-radius: 24px;
+           background-color: #e5e5e5;
+           cursor: pointer;
+           display: inline-block;
+           line-height: 0;
+         }
+    
+         .carousel__nav__item:hover {
+           background-color: #cacacb;
+         }
+    
+         @media screen and (max-width: 768px) {
+           .slider-section {
+             padding: 2rem 0;
+             /* Adjusted padding */
+             margin-bottom: 10%;
+           }
+    
+           .carousel__wrapper {
+             grid-template-columns: 1fr;
+             grid-template-areas: "title" "carousel" "nav";
+             gap: 2rem;
+           }
+         }
