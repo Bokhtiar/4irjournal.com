@@ -1,137 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Responsive Carousel</title>
-	<style>
-		/* Add your CSS styles here */
-		
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Carousel</title>
 	<link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Some Resets */
+        .slider-main {
+            display: grid;
+            place-items: center;
+        }
+
+        .slider-section {
+            margin-bottom: 15%;
+            padding: 5rem 0;
+            /* tablet sizing*/
+            width: 100%;
+            /* Added max-width */
+            height: min-content;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .carousel__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr max-content;
+            grid-template-areas: "title nav" "carousel carousel";
+            position: relative;
+            width: 100%;
+            height: max-content;
+            gap: 2rem 0;
+            align-items: center;
+        }
+
+        .carousel__header {
+            grid-area: title;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .carousel {
+            grid-area: carousel;
+            position: relative;
+            overflow-x: clip;
+            width: 100%;
+            /* Added width */
+        }
+
+        .carousel__item {
+            position: absolute;
+            padding: 2rem;
+            border-radius: 12px;
+            background: #eee;
+            top: 0;
+            transition: all ease-in-out 800ms;
+            display: grid;
+            place-items: center;
+            width: 100%;
+            /* Added width */
+        }
+
+        .carousel__item--active {
+            top: -0.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel__item__name {
+            color: #fff;
+            text-align: center;
+        }
+
+        .carousel__item>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem 0;
+        }
+
+        /* Caousel Nav */
+        .carousel__nav {
+            grid-area: nav;
+            justify-self: end;
+            display: flex;
+            justify-content: center;
+            gap: 0 1rem;
+        }
+
+        .carousel__nav__item {
+            padding: 0.375rem;
+            border: 1px solid #eee;
+            border-radius: 24px;
+            background-color: #e5e5e5;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 0;
+        }
+
+        .carousel__nav__item:hover {
+            background-color: #cacacb;
+        }
+
+        @media screen and (max-width: 768px) {
+            .slider-section {
+                padding: 2rem 0;
+                /* Adjusted padding */
+                margin-bottom: 10%;
+            }
+
+            .carousel__wrapper {
+                grid-template-columns: 1fr;
+                grid-template-areas: "title" "carousel" "nav";
+                gap: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-	<div class="container">
-		<div class="section-heading">
-			<h2>Best-Cited and Popular Articles</h2>
-			<p>Exploring the world of technology, science, and more!</p>
-		</div>
+    <div class="container">
+        <div class="section-heading">
+            <h2>Best-Cited and Popular Articles</h2>
+            <p>Exploring the world of technology, science, and more!</p>
+        </div>
 
-		<main class="slider-main">
-			<section class="slider-section">
-				<div class="carousel__wrapper">
-					<h1 class="carousel__header">Basic Carousel UI</h1>
-					<div class="carousel__nav">
-						<div class="carousel__nav__item" data-direction="prev">
-							<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px"
-								height="24px" fill="none">
-								<path stroke="currentColor" stroke-width="1.5" d="M15.525 18.966L8.558 12l6.967-6.967">
-								</path>
-							</svg>
-						</div>
-						<div class="carousel__nav__item" data-direction="next">
-							<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px"
-								height="24px" fill="none">
-								<path stroke="currentColor" stroke-width="1.5" d="M8.474 18.966L15.44 12 8.474 5.033">
-								</path>
-							</svg>
-						</div>
-					</div>
-					<div class="carousel">
-						asdfasdfasdf<!-- Carousel items go here -->
-					</div>
-					<div class="carousel">
-						asdfasdfasdf<!-- Carousel items go here -->
-					</div>
-					<div class="carousel">
-						asdfasdfasdf<!-- Carousel items go here -->
-					</div>
-					<div class="carousel">
-						asdfasdfasdf<!-- Carousel items go here -->
-					</div>
-				</div>
-			</section>
-		</main>
+        
+        <div class="slider-main">
+          <section class="slider-section">
+            <div class="carousel__wrapper">
+              <h1 class="carousel__header">Basic Carousel UI</h1>
+              <div class="carousel__nav">
+                <div class="carousel__nav__item" data-direction="prev">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px"
+                    fill="none">
+                    <path stroke="currentColor" stroke-width="1.5" d="M15.525 18.966L8.558 12l6.967-6.967"></path>
+                  </svg>
+                </div>
+                <div class="carousel__nav__item" data-direction="next">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="24px" height="24px"
+                    fill="none">
+                    <path stroke="currentColor" stroke-width="1.5" d="M8.474 18.966L15.44 12 8.474 5.033"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="carousel">
+                <div class="carousel__item carousel__item carousel__item--matcha">
+                  <div>
+                    <div class="" style="border-radius: 10px;">
+                      <img src="/images/homeImg2.jpg" style=" border-radius: 10px;" alt="">
+                      <h4 style="font-size: 13px; font-weight: bold;">Bangladesh Open versity</h4>
 
-		<div style="text-align: center;">
-			<a href="#" class="bou-btn">View More</a>
-		</div>
+                      <p style="font-size: 11px; margin-top: 5px;">Bangladesh Open University (BOU) is the only open
+                        university in
+                        Bangladesh. I</p>
 
-	</div>
+                      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
 
-	<script>
-		class Carousel {
-			constructor(element) {
-				this.element = element;
-				this.items = this.element.querySelectorAll(".carousel__item");
-				this.nav = this.element.parentElement.querySelectorAll(".carousel__nav__item");
-				this.size = 3; // Number of items to show
-				this.gap = 16; // Gap between items in pixels
-				this.activeClass = true;
-				this.init();
-				this.setupListeners();
-			}
+                        <span style="font-size: 12px; font-weight: 500; display: flex; margin-top: 5px; ">
+                          <img
+                            src="https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MDI3Nzc5MQ&ixlib=rb-1.2.1&q=85"
+                            style="height: 16px; width: 16px; border-radius: 50%;" alt="">
+                          <span style="margin-left: 3px;">creator name</span>
+                        </span>
+                        <span style="font-size: 14px">
+                          <a href="">
+                            <span class="material-symbols-outlined" style="font-size: 20px; margin-top: 4px;">
+                              visibility
+                            </span>
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel__item carousel__item--strawberry">
+                  <div>
+                    <div class="" style="border-radius: 10px;">
+                      <img src="/images/homeImg2.jpg" style=" border-radius: 10px;" alt="">
+                      <h4 style="font-size: 13px; font-weight: bold;">Bangladesh Open versity</h4>
 
-			init() {
-				this.updateCarousel();
-				window.addEventListener("resize", () => this.updateCarousel());
-			}
+                      <p style="font-size: 11px; margin-top: 5px;">Bangladesh Open University (BOU) is the only open
+                        university in
+                        Bangladesh. I</p>
 
-			updateCarousel() {
-				const containerWidth = this.element.clientWidth;
-				const itemWidth = (containerWidth - (this.size - 1) * this.gap) / this.size;
-				this.items.forEach(item => {
-					item.style.width = `${itemWidth}px`;
-				});
-				this.element.style.height = `${this.items[0].clientHeight}px`;
-				if (this.activeClass) {
-					this.setActiveClass();
-				}
-			}
+                      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
 
-			setActiveClass() {
-				const mean = Math.round(this.size / 2);
-				this.items.forEach((item, index) => {
-					item.classList.remove("carousel__item--active");
-					if (index === mean) {
-						item.classList.add("carousel__item--active");
-					}
-				});
-			}
+                        <span style="font-size: 12px; font-weight: 500; display: flex; margin-top: 5px; ">
+                          <img
+                            src="https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MDI3Nzc5MQ&ixlib=rb-1.2.1&q=85"
+                            style="height: 16px; width: 16px; border-radius: 50%;" alt="">
+                          <span style="margin-left: 3px;">creator name</span>
+                        </span>
+                        <span style="font-size: 14px">
+                          <a href="">
+                            <span class="material-symbols-outlined" style="font-size: 20px; margin-top: 4px;">
+                              visibility
+                            </span>
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel__item carousel__item--vanilla">
+                  <div>
+                    <div class="" style="border-radius: 10px;">
+                      <img src="/images/homeImg2.jpg" style=" border-radius: 10px;" alt="">
+                      <h4 style="font-size: 13px; font-weight: bold;">Bangladesh Open versity</h4>
 
-			setupListeners() {
-				this.nav.forEach(navItem => {
-					navItem.addEventListener("click", () => {
-						const direction = navItem.getAttribute("data-direction");
-						if (direction === "next") {
-							this.next();
-						} else {
-							this.prev();
-						}
-					});
-				});
-			}
+                      <p style="font-size: 11px; margin-top: 5px;">Bangladesh Open University (BOU) is the only open
+                        university in
+                        Bangladesh. I</p>
 
-			next() {
-				const firstItem = this.items[0];
-				const clonedItem = firstItem.cloneNode(true);
-				this.element.appendChild(clonedItem);
-				firstItem.remove();
-			}
+                      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
 
-			prev() {
-				const lastItem = this.items[this.items.length - 1];
-				const clonedItem = lastItem.cloneNode(true);
-				this.element.insertBefore(clonedItem, this.items[0]);
-				lastItem.remove();
-			}
-		}
+                        <span style="font-size: 12px; font-weight: 500; display: flex; margin-top: 5px; ">
+                          <img
+                            src="https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MDI3Nzc5MQ&ixlib=rb-1.2.1&q=85"
+                            style="height: 16px; width: 16px; border-radius: 50%;" alt="">
+                          <span style="margin-left: 3px;">creator name</span>
+                        </span>
+                        <span style="font-size: 14px">
+                          <a href="">
+                            <span class="material-symbols-outlined" style="font-size: 20px; margin-top: 4px;">
+                              visibility
+                            </span>
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel__item carousel__item--mango">
+                  <div>
+                    <div class="" style="border-radius: 10px;">
+                      <img src="/images/homeImg2.jpg" style=" border-radius: 10px;" alt="">
+                      <h4 style="font-size: 13px; font-weight: bold;">Bangladesh Open versity</h4>
 
-		const element = document.querySelector(".carousel");
-		new Carousel(element);
-	</script>
+                      <p style="font-size: 11px; margin-top: 5px;">Bangladesh Open University (BOU) is the only open
+                        university in
+                        Bangladesh. I</p>
+
+                      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+
+                        <span style="font-size: 12px; font-weight: 500; display: flex; margin-top: 5px; ">
+                          <img
+                            src="https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MDI3Nzc5MQ&ixlib=rb-1.2.1&q=85"
+                            style="height: 16px; width: 16px; border-radius: 50%;" alt="">
+                          <span style="margin-left: 3px;">creator name</span>
+                        </span>
+                        <span style="font-size: 14px">
+                          <a href="">
+                            <span class="material-symbols-outlined" style="font-size: 20px; margin-top: 4px;">
+                              visibility
+                            </span>
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel__item carousel__item--chocolate">
+                  <div>
+                    <div class="" style="border-radius: 10px;">
+                      <img src="/images/homeImg2.jpg" style=" border-radius: 10px;" alt="">
+                      <h4 style="font-size: 13px; font-weight: bold;">Bangladesh Open versity</h4>
+
+                      <p style="font-size: 11px; margin-top: 5px;">Bangladesh Open University (BOU) is the only open
+                        university in
+                        Bangladesh. I</p>
+
+                      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+
+                        <span style="font-size: 12px; font-weight: 500; display: flex; margin-top: 5px; ">
+                          <img
+                            src="https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MDI3Nzc5MQ&ixlib=rb-1.2.1&q=85"
+                            style="height: 16px; width: 16px; border-radius: 50%;" alt="">
+                          <span style="margin-left: 3px;">creator name</span>
+                        </span>
+                        <span style="font-size: 14px">
+                          <a href="">
+                            <span class="material-symbols-outlined" style="font-size: 20px; margin-top: 4px;">
+                              visibility
+                            </span>
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="#" class="bou-btn">View More</a>
+        </div>
+    </div>
+
+   <script>
+    class Carousel {
+        constructor(element) {
+            this.element = element;
+            this.items = this.element.querySelectorAll('.carousel__item');
+            this.nav = this.element.parentElement.querySelector('.carousel__nav');
+            this.size = 3; // number of items to show
+            this.gap = 16; // in px
+            this.activeClass = true;
+            this.itemProps = {
+                width: 0,
+                left: 0
+            };
+            this.buttonDisabled = false;
+
+            this.init();
+        }
+
+        async init() {
+            await this.setMinItems();
+            this.itemProps.width = await this.getSize();
+            this.element.style.height = this.items[0].clientHeight + "px";
+            this.build();
+            this.addEventListeners();
+        }
+
+        async setMinItems() {
+            const minItems = this.size + 2;
+            if (this.items.length < minItems) {
+                let currentLength = this.items.length;
+                for (let i = 0; i < currentLength; i++) {
+                    let clonedItem = this.items[i].cloneNode(true);
+                    this.element.append(clonedItem);
+                }
+                this.items = this.element.querySelectorAll('.carousel__item');
+            }
+        }
+
+        async getSize() {
+            let totalSpacing = this.gap * (this.size - 1); // no need to space for last element
+            let width = this.element.clientWidth - totalSpacing; // width without scrollbar
+            width = width / this.size;
+            return width;
+        }
+
+        async build() {
+            for (let i = 0; i < this.items.length; i++) {
+                this.items[i].style.width = this.itemProps.width + "px";
+                this.items[i].style.left = (this.itemProps.width + this.gap) * (i - 1) + "px";
+            }
+            if (this.activeClass) {
+                this.setActiveClass();
+            }
+        }
+
+        async move(pos) {
+            let item = 0;
+            if (pos === "next") {
+                item = this.items[0];
+            } else {
+                item = this.items[this.items.length - 1];
+            }
+            let clonedItem = item.cloneNode(true);
+            if (pos === "next") {
+                this.element.append(clonedItem);
+            } else {
+                this.element.prepend(clonedItem);
+            }
+            item.remove();
+            this.items = this.element.querySelectorAll('.carousel__item');
+        }
+
+        async next() {
+            this.move("next");
+            this.build();
+        }
+
+        async prev() {
+            this.move("prev");
+            this.build();
+        }
+
+        async setActiveClass() {
+            let mean = Math.round(this.size / 2);
+            for (let i = 0; i < this.items.length; i++) {
+                this.items[i].classList.remove("carousel__item--active");
+                if (i === mean) {
+                    this.items[i].classList.add("carousel__item--active");
+                }
+            }
+        }
+
+        async addEventListeners() {
+            for (let i = 0; i < this.nav.children.length; i++) {
+                let currentNavElement = this.nav.children[i];
+                currentNavElement.addEventListener("click", () => this.moveHandler(currentNavElement));
+            }
+        }
+
+        async moveHandler(element) {
+            if (!this.buttonDisabled) {
+                this.buttonDisabled = true;
+                let direction = element.getAttribute("data-direction");
+                if (direction === "next") {
+                    this.next();
+                } else {
+                    this.prev();
+                }
+                setTimeout(() => (this.buttonDisabled = false), 800);
+            }
+        }
+    }
+
+    const element = document.querySelector('.carousel');
+    new Carousel(element);
+</script>
 </body>
-
-</html>
